@@ -6,5 +6,5 @@ public record AdressForm(String street,
 						 String city,
 						 String uf,
 						 String complement,
-						 String number) {
+						 Integer number) {
 }

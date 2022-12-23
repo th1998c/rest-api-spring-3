@@ -16,6 +16,9 @@ public record DoctorRegisterForm(
 								 @Email
 								 String email,
 								 
+								 @NotBlank
+								 String telephone,
+								 
 								 @NotBlank 
 								 @Pattern(regexp = "\\d{4,6}")
 								 String crm,

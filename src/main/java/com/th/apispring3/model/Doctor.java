@@ -32,6 +32,7 @@ public class Doctor {
 	private Long id;
 	private String name;
 	private String email;
+	private String telephone;
 	private String crm;
 	
 	@Enumerated(EnumType.STRING)
@@ -41,11 +42,11 @@ public class Doctor {
 	private Adress adress;
 
 	public static Doctor returnDoctor(DoctorRegisterForm form) {
-		return Doctor.builder().name(form.name()).email(form.email()).crm(form.crm()).specialty(form.specialty())
-					  .adress(Adress.builder().street(form.adress().street()).district(form.adress().district())
-					  .zipCode(form.adress().zipCode()).city(form.adress().city())
-					  .uf(form.adress().uf()).complement(form.adress().complement())
-					  .number(form.adress().number()).build())
+		return Doctor.builder().name(form.name()).email(form.email()).telephone(form.telephone()).crm(form.crm())
+					  .specialty(form.specialty()).adress(Adress.builder().street(form.adress().street())
+					  .district(form.adress().district()).zipCode(form.adress().zipCode())
+					  .city(form.adress().city()).uf(form.adress().uf())
+					  .complement(form.adress().complement()).number(form.adress().number()).build())
 			  		  .build();
 	}
 }

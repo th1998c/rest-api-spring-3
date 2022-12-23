@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.th.apispring3.model.record.DoctorRegisterForm;
 import com.th.apispring3.service.DoctorService;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -19,7 +20,7 @@ public class DoctorController {
 	private final DoctorService doctorService;
 	
 	@PostMapping
-	public void Register(@RequestBody DoctorRegisterForm form) {
+	public void Register(@RequestBody @Valid DoctorRegisterForm form) {
 		doctorService.Register(form);
 	}
 	

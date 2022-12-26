@@ -2,6 +2,7 @@ package com.th.apispring3.model;
 
 import com.th.apispring3.model.Enum.Specialty;
 import com.th.apispring3.model.record.DoctorRegisterForm;
+import com.th.apispring3.model.record.DoctorUpdateForm;
 
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -48,5 +49,19 @@ public class Doctor {
 					  .city(form.adress().city()).uf(form.adress().uf())
 					  .complement(form.adress().complement()).number(form.adress().number()).build())
 			  		  .build();
+	}
+
+	public Doctor updateData( DoctorUpdateForm form) {
+		if(form.name() != null) {
+			this.setName(form.name());
+		}
+		if(form.telephone() != null) {
+			this.setTelephone(form.telephone());
+		}
+		if(form.adress() != null) {
+			this.adress.UpdateData(form.adress());
+		}
+		
+		return this;
 	}
 }

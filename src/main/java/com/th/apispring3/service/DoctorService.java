@@ -41,4 +41,10 @@ public class DoctorService {
 		var doctor = findById(id);
 		return new DoctorRecord(doctor.updateData(form));
 	}
+	
+	@Transactional
+	public void remove(Long id) {
+		var doctor = findById(id);
+		doctor.setActive(false);
+	}
 }
